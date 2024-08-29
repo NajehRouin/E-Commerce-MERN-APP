@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import UploadProduct from '../components/UploadProduct'
-import SummaryApi from '../common'
+import Api from '../common'
 import AdminProductCard from '../components/AdminProductCard'
 
 const AllProducts = () => {
@@ -8,7 +8,7 @@ const AllProducts = () => {
   const [allProduct,setAllProduct] = useState([])
 
   const fetchAllProduct = async() =>{
-    const response = await fetch(SummaryApi.allProduct.url)
+    const response = await fetch(Api.allProduct.url)
     const dataResponse = await response.json()
 
  

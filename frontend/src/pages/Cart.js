@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import SummaryApi from '../common'
+import Api from '../common'
 import Context from '../context'
 import displayINRCurrency from '../helpers/displayCurrency'
 import { MdDelete } from "react-icons/md";
@@ -13,8 +13,8 @@ const Cart = () => {
 
     const fetchData = async() =>{
         
-        const response = await fetch(SummaryApi.addToCartProductView.url,{
-            method : SummaryApi.addToCartProductView.method,
+        const response = await fetch(Api.addToCartProductView.url,{
+            method : Api.addToCartProductView.method,
             credentials : 'include',
             headers : {
                 "content-type" : 'application/json'
@@ -43,8 +43,8 @@ const Cart = () => {
 
 
     const increaseQty = async(id,qty) =>{
-        const response = await fetch(SummaryApi.updateCartProduct.url,{
-            method : SummaryApi.updateCartProduct.method,
+        const response = await fetch(Api.updateCartProduct.url,{
+            method : Api.updateCartProduct.method,
             credentials : 'include',
             headers : {
                 "content-type" : 'application/json'
@@ -68,8 +68,8 @@ const Cart = () => {
 
     const decraseQty = async(id,qty) =>{
        if(qty >= 2){
-            const response = await fetch(SummaryApi.updateCartProduct.url,{
-                method : SummaryApi.updateCartProduct.method,
+            const response = await fetch(Api.updateCartProduct.url,{
+                method : Api.updateCartProduct.method,
                 credentials : 'include',
                 headers : {
                     "content-type" : 'application/json'
@@ -92,8 +92,8 @@ const Cart = () => {
     }
 
     const deleteCartProduct = async(id)=>{
-        const response = await fetch(SummaryApi.deleteCartProduct.url,{
-            method : SummaryApi.deleteCartProduct.method,
+        const response = await fetch(Api.deleteCartProduct.url,{
+            method : Api.deleteCartProduct.method,
             credentials : 'include',
             headers : {
                 "content-type" : 'application/json'

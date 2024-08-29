@@ -4,7 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import imageTobase64 from '../helpers/imageTobase64';
-import SummaryApi from '../common';
+import Api from '../common';
 import { toast } from 'react-toastify';
 
 const SignUp = () => {
@@ -50,8 +50,8 @@ const SignUp = () => {
 
       if(data.password === data.confirmPassword){
 
-        const dataResponse = await fetch(SummaryApi.signUP.url,{
-            method : SummaryApi.signUP.method,
+        const dataResponse = await fetch(Api.signUP.url,{
+            method : Api.signUP.method,
             headers : {
                 "content-type" : "application/json"
             },

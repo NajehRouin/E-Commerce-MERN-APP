@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import SummaryApi from '../common';
+import Api from '../common';
 import { toast } from 'react-toastify'
 import { setUserDetails } from '../store/userSlice';
 import ROLE from '../common/role';
@@ -24,8 +24,8 @@ const Header = () => {
   const [search,setSearch] = useState(searchQuery)
 
   const handleLogout = async() => {
-    const fetchData = await fetch(SummaryApi.logout_user.url,{
-      method : SummaryApi.logout_user.method,
+    const fetchData = await fetch(Api.logout_user.url,{
+      method : Api.logout_user.method,
       credentials : 'include'
     })
 

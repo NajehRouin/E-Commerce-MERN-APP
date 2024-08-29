@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from 'react';
-import SummaryApi from './common';
+import Api from './common';
 import Context from './context';
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from './store/userSlice';
@@ -16,8 +16,8 @@ function App() {
   const [cartProductCount,setCartProductCount] = useState(0)
 
   const fetchUserDetails = async()=>{
-      const dataResponse = await fetch(SummaryApi.current_user.url,{
-        method : SummaryApi.current_user.method,
+      const dataResponse = await fetch(Api.current_user.url,{
+        method : Api.current_user.method,
         credentials : 'include'
       })
 
@@ -29,8 +29,8 @@ function App() {
   }
 
   const fetchUserAddToCart = async()=>{
-    const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
-      method : SummaryApi.addToCartProductCount.method,
+    const dataResponse = await fetch(Api.addToCartProductCount.url,{
+      method : Api.addToCartProductCount.method,
       credentials : 'include'
     })
 

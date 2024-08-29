@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import productCategory from '../helpers/productCategory'
 import VerticalCard from '../components/VerticalCard'
-import SummaryApi from '../common'
+import Api from '../common'
 
 const CategoryProduct = () => {
     const [data,setData] = useState([])
@@ -23,8 +23,8 @@ const CategoryProduct = () => {
     const [sortBy,setSortBy] = useState("")
 
     const fetchData = async()=>{
-      const response = await fetch(SummaryApi.filterProduct.url,{
-        method : SummaryApi.filterProduct.method,
+      const response = await fetch(Api.filterProduct.url,{
+        method : Api.filterProduct.method,
         headers : {
           "content-type" : "application/json"
         },
