@@ -5,7 +5,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import addToCart from '../helpers/addToCart'
 import Context from '../context'
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import ROLE from '../common/role'
 const HorizontalCardProduct = ({category, heading}) => {
     const user = useSelector(state => state?.user?.user)
@@ -14,7 +14,7 @@ const HorizontalCardProduct = ({category, heading}) => {
     const [loading,setLoading] = useState(true)
     const loadingList = new Array(13).fill(null)
 
-    const [scroll,setScroll] = useState(0)
+    
     const scrollElement = useRef()
 
 
@@ -30,7 +30,7 @@ const HorizontalCardProduct = ({category, heading}) => {
         const categoryProduct = await fetchCategoryWiseProduct(category)
         setLoading(false)
 
-        console.log("horizontal data",categoryProduct.data)
+
         setData(categoryProduct?.data)
     }
 

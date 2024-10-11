@@ -11,6 +11,10 @@ import CategoryProduct from '../pages/CategoryProduct'
 import ProductDetails from '../pages/ProductDetails'
 import Cart from '../pages/Cart'
 import SearchProduct from '../pages/SearchProduct'
+import AllOrders from '../pages/AllOrders'
+import UserPanel from '../pages/UserPanel'
+import OrderUser from '../pages/OrderUser'
+import DashBord from '../pages/DashBord'
 
 const router = createBrowserRouter([
     {
@@ -54,13 +58,35 @@ const router = createBrowserRouter([
                 element : <AdminPanel/>,
                 children : [
                     {
+                        path : "home",
+                        element : <DashBord/>
+                    },
+
+                    {
                         path : "all-users",
                         element : <AllUsers/>
                     },
                     {
                         path : "all-products",
                         element : <AllProducts/>
+                    },
+                    {
+                        path : "all-orders",
+                        element : <AllOrders/>
                     }
+                ]
+            },
+
+
+            {
+                path : "user-panel",
+                element : <UserPanel/>,
+                children : [
+                    {
+                        path : "my-order",
+                        element : <OrderUser/>
+                    },
+                 
                 ]
             },
         ]

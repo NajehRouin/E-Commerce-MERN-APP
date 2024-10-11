@@ -55,7 +55,7 @@ const ProductDetails = () => {
 
   }
 
-  console.log("data",data)
+
 
   useEffect(()=>{
     fetchProductDetails()

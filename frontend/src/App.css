@@ -3,15 +3,33 @@
 }
 
 /***user table***/
-.userTable{
-    @apply bg-white
+.userTable {
+    @apply bg-white;
 }
-.userTable th{
-    @apply border text-base font-medium
+.userTable th {
+    @apply border text-base font-medium;
+}
+.userTable td {
+    @apply border text-base text-center;
 }
 
-.userTable td{
-    @apply border text-base text-center
+/* Responsive Design */
+@screen sm {
+    .userTable th, .userTable td {
+        @apply text-sm;
+    }
+}
+
+@screen md {
+    .userTable th, .userTable td {
+        @apply text-base;
+    }
+}
+
+@screen lg {
+    .userTable th, .userTable td {
+        @apply text-lg;
+    }
 }
 
 /**scrollbar hidden****/
