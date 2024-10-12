@@ -11,7 +11,9 @@ const AllUsers = () => {
   const [updateUserDetails, setUpdateUserDetails] = useState({
     email: "",
     name: "",
-    role: "",
+    phone:"",
+    adress:"",
+    
     _id: "",
   });
   const [currentPage, setCurrentPage] = useState(1);
@@ -44,14 +46,23 @@ const AllUsers = () => {
   }, [currentPage]); 
 
   return (
-    <div className="bg-white pb-4 overflow-x-auto">
+    <div className="p-4">
+    <div className="bg-white py-2 px-4 flex justify-between items-center flex-wrap">
+      <h2 className="font-bold text-lg">All Users</h2>
+   
+    </div>
+
+
+    <div className="bg-white pb-4 overflow-x-auto mt-5">
       <table className="w-full userTable min-w-[600px]">
         <thead>
           <tr className="bg-black text-white">
             <th>Index.</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Role</th>
+            <th>Pohne</th>
+            <th>Adress</th>
+           
             <th>Created Date</th>
             <th>Action</th>
           </tr>
@@ -63,7 +74,9 @@ const AllUsers = () => {
                 <td>{(currentPage - 1) * limit + (index + 1)}</td>
                 <td>{el?.name}</td>
                 <td>{el?.email}</td>
-                <td>{el?.role}</td>
+                <td>{el?.phone}</td>
+                <td>{el?.adress}</td>
+              
                 <td>{moment(el?.createdAt).format("LL")}</td>
                 <td className="flex justify-evenly items-center">
                   <button
@@ -113,11 +126,14 @@ const AllUsers = () => {
           onClose={() => setOpenUpdateRole(false)}
           name={updateUserDetails.name}
           email={updateUserDetails.email}
-          role={updateUserDetails.role}
+          phone={updateUserDetails.phone}
+          adress={updateUserDetails.adress}
+         
           userId={updateUserDetails._id}
           callFunc={fetchAllUsers}
         />
       )}
+    </div>
     </div>
   );
 };

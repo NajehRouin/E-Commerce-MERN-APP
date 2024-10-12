@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { FaRegCircleUser, FaProductHunt } from "react-icons/fa6";
+import { BiCategoryAlt } from "react-icons/bi";
 import { MdHome } from "react-icons/md";
 import { FaUsers, FaShoppingCart } from "react-icons/fa";
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import ROLE from "../common/role";
+
 
 const AdminPanel = () => {
   const user = useSelector((state) => state?.user?.user);
@@ -68,6 +70,17 @@ const AdminPanel = () => {
             <FaUsers className="mr-2 w-5 h-5 inline" /> All Users
           </Link>
 
+
+      
+          <Link
+            to="/admin-panel/all-categorys"
+            className={`block px-2 py-1 rounded-full mt-2 ${
+              isActive("/admin-panel/all-categorys") ? "bg-slate-300" : "hover:bg-slate-500"
+            }`}
+          >
+            <BiCategoryAlt className="mr-2 w-5 h-5 inline" /> All Categorys
+          </Link>
+
           <Link
             to="/admin-panel/all-products"
             className={`block px-2 py-1 rounded-full mt-2 ${
@@ -123,6 +136,17 @@ const AdminPanel = () => {
             }`}
           >
             <FaUsers className="mr-2 w-10 h-6" /> All Users
+          </Link>
+
+
+          
+          <Link
+            to="/admin-panel/all-categorys"
+            className={`flex items-center px-2 py-1 rounded-full mt-2 ${
+              isActive("/admin-panel/all-categorys") ? "bg-slate-300" : "hover:bg-slate-500"
+            }`}
+          >
+            <BiCategoryAlt className="mr-2 w-10 h-6" /> All Categorys
           </Link>
 
           <Link

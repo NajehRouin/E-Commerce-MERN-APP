@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CgClose } from "react-icons/cg";
-import productCategory from '../helpers/productCategory';
+//import productCategory from '../helpers/productCategory';
 import { FaCloudUploadAlt } from "react-icons/fa";
 import uploadImage from '../helpers/uploadImage';
 import DisplayImage from './DisplayImage';
@@ -23,7 +23,7 @@ const UploadProduct = ({
   })
   const [openFullScreenImage,setOpenFullScreenImage] = useState(false)
   const [fullScreenImage,setFullScreenImage] = useState("")
-
+  const [productCategory, setproductCategory] = useState([]);
 
   const handleOnChange = (e)=>{
       const { name, value} = e.target
@@ -64,6 +64,7 @@ const UploadProduct = ({
   }
 
 
+  
   {/**upload product */}
   const handleSubmit = async(e) =>{
     e.preventDefault()
@@ -92,6 +93,27 @@ const UploadProduct = ({
   
 
   }
+
+  const fetchCatgory = async () => {
+    const fetchData = await fetch(Api.allCategory.url, {
+      method: Api.allCategory.method,
+      credentials: "include",
+    });
+
+    const dataResponse = await fetchData.json();
+
+    if (dataResponse.success) {
+      setproductCategory(dataResponse.data);
+    }
+
+    if (dataResponse.error) {
+      toast.error(dataResponse.message);
+    }
+  };
+
+useEffect(()=>{
+  fetchCatgory()
+},[])
 
   return (
     <div className='fixed w-full  h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center'>

@@ -32,6 +32,28 @@ const Api = {
     method: "get",
   },
 
+//api category
+allCategory: {
+  url: `${apiUrl}/api/all-category`,
+  method: "get",
+},
+
+
+category: {
+  url: `${apiUrl}/api/category`,
+  method: "get",
+},
+
+
+createCategroy: {
+  url: `${apiUrl}/api/create-category`,
+  method: "post",
+},
+
+updateCategory: {
+  url: `${apiUrl}/api/update-category`,
+  method: "post",
+},
 
 
   //api products

@@ -48,7 +48,13 @@ function AllOrders() {
   }, [currentPage]); // Re-fetch when currentPage changes
 
   return (
-    <div className="bg-white pb-4 overflow-x-auto">
+
+    <div className="p-4">
+    <div className="bg-white py-2 px-4 flex justify-between items-center flex-wrap">
+      <h2 className="font-bold text-lg">All Orders</h2>
+   
+    </div>
+    <div className="bg-white pb-4 overflow-x-auto mt-5">
       <table className="w-full userTable min-w-[600px]">
         <thead>
           <tr className="bg-black text-white">
@@ -66,7 +72,7 @@ function AllOrders() {
         <tbody>
   {allOrders?.map((el, index) => (
    <tr key={index}>
-                                    <td>{(currentPage - 1) * limit + (index + 1)}</td>
+     <td>{(currentPage - 1) * limit + (index + 1)}</td>
       <td>{el?.NumberOrder}</td>
       <td>{el?.userId?.name}</td>
       <td>{el?.userId?.email}</td>
@@ -140,6 +146,7 @@ function AllOrders() {
           />
         )
       }
+    </div>
     </div>
   );
 }

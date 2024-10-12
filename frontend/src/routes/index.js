@@ -15,6 +15,8 @@ import AllOrders from '../pages/AllOrders'
 import UserPanel from '../pages/UserPanel'
 import OrderUser from '../pages/OrderUser'
 import DashBord from '../pages/DashBord'
+import AllCategory from '../pages/AllCategory'
+import ProfilUser from '../pages/ProfilUser'
 
 const router = createBrowserRouter([
     {
@@ -67,6 +69,11 @@ const router = createBrowserRouter([
                         element : <AllUsers/>
                     },
                     {
+                        path : "all-categorys",
+                        element : <AllCategory/>
+                    },
+
+                    {
                         path : "all-products",
                         element : <AllProducts/>
                     },
@@ -82,6 +89,13 @@ const router = createBrowserRouter([
                 path : "user-panel",
                 element : <UserPanel/>,
                 children : [
+
+
+                        {
+                            path : "my-profil",
+                            element : <ProfilUser/>
+                        },
+
                     {
                         path : "my-order",
                         element : <OrderUser/>

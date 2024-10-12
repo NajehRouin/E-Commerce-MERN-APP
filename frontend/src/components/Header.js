@@ -106,7 +106,7 @@ const Header = () => {
                     </Link>
                   ) : (
                     <Link
-                      to={"/user-panel/my-order"}
+                      to={"/user-panel/my-profil"}
                       className="whitespace-nowrap hidden md:block hover:bg-slate-100 p-2"
                       onClick={() => setMenuDisplay((preve) => !preve)}
                     >
