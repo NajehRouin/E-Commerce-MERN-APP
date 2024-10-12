@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 async function userSignUpController(req,res){
     try{
-        const { email, password, name} = req.body
+        const { email, password, name,phone,adress} = req.body
 
         const user = await userModel.findOne({email})
 
@@ -22,6 +22,13 @@ async function userSignUpController(req,res){
         }
         if(!name){
             throw new Error("Please provide name")
+        }
+
+        if(!phone){
+            throw new Error("Please provide phone")
+        }
+        if(!adress){
+            throw new Error("Please provide adress")
         }
 
         const salt = bcrypt.genSaltSync(10);

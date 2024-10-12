@@ -4,12 +4,14 @@ async function updateUser(req,res){
     try{
         const sessionUser = req.userId
 
-        const { userId , email, name, role} = req.body
+        const { userId , email, name,phone,adress } = req.body
 
         const payload = {
             ...( email && { email : email}),
             ...( name && { name : name}),
-            ...( role && { role : role}),
+            ...( phone && { phone : phone}),
+            ...( adress && { adress : adress}),
+         
         }
 
         const user = await userModel.findById(sessionUser)

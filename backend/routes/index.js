@@ -6,6 +6,8 @@ const userSignUpController = require("../controller/user/userSignUp")
 const userSignInController = require('../controller/user/userSignIn')
 const userDetailsController = require('../controller/user/userDetails')
 const authToken = require('../middleware/authToken')
+
+
 const userLogout = require('../controller/user/userLogout')
 const allUsers = require('../controller/user/allUsers')
 const updateUser = require('../controller/user/updateUser')
@@ -25,6 +27,7 @@ const filterProductController = require('../controller/product/filterProduct')
 const userByMonth =require('../controller/user/userByMonth')
 
 const OrdersCtrl = require('../controller/order/OrderCtrl')
+const categoryCtrl = require('../controller/category/CategorysCtrl')
 
 
 
@@ -39,10 +42,10 @@ router.post("/update-user",authToken,updateUser)
 
 //category
 
-
-
-
-
+router.post('/create-category',authToken,categoryCtrl.createCategory)
+router.get('/all-category',categoryCtrl.getAllCategorys)
+router.get('/category',categoryCtrl.getCategorys)
+router.post('/update-category',authToken,categoryCtrl.updateCategory)
 //product
 router.post("/upload-product",authToken,UploadProductController)
 router.get("/get-product",getProductController)

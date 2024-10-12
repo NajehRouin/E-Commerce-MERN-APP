@@ -11,6 +11,10 @@ const userSchema = new mongoose.Schema({
     password : String,
     profilePic : String,
     role : String,
+    phone:String,
+    adress:String,
+
+    
 },{
     timestamps : true
 })
