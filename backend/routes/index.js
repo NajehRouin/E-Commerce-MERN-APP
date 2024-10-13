@@ -28,6 +28,8 @@ const userByMonth =require('../controller/user/userByMonth')
 
 const OrdersCtrl = require('../controller/order/OrderCtrl')
 const categoryCtrl = require('../controller/category/CategorysCtrl')
+const updateProfilUser = require('../controller/user/updateProfilUser')
+const resetPassword = require('../controller/user/resetpassword')
 
 
 
@@ -36,6 +38,12 @@ router.post("/signin",userSignInController)
 router.get("/user-details",authToken,userDetailsController)
 router.get("/userLogout",userLogout)
 router.get('/userByMonth',userByMonth)
+
+router.post('/updateProfilUser',authToken,updateProfilUser)
+
+router.post('/resetPassword',resetPassword)
+
+
 //admin panel 
 router.get("/all-user",authToken,allUsers)
 router.post("/update-user",authToken,updateUser)
