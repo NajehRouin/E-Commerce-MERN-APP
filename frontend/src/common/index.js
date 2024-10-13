@@ -32,6 +32,16 @@ const Api = {
     method: "get",
   },
 
+  updateCurrentUser: {
+    url: `${apiUrl}/api/updateProfilUser`,
+    method: "post",
+  },
+  resetPassword: {
+    url: `${apiUrl}/api/resetPassword`,
+    method: "post",
+  },
+
+
 //api category
 allCategory: {
   url: `${apiUrl}/api/all-category`,

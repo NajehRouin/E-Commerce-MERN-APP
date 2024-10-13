@@ -19,6 +19,7 @@ const SignUp = () => {
     phone: "",
     adress: "",
   });
+ 
   const navigate = useNavigate();
 
   const handleOnChange = (e) => {
@@ -222,5 +223,6 @@ const SignUp = () => {
     </section>
   );
 };
+
 
 export default SignUp;
