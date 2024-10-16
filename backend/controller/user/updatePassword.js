@@ -7,6 +7,18 @@ async function updatePassword(req,res) {
         const currentUser = req.userId;
         let findcurrentUser=await userModel.findById(currentUser)
         const checkPassword = await bcrypt.compare(password,findcurrentUser.password)
+        if(!password){
+            throw new Error("Please provide old password")
+         }
+
+         if(!newPassword){
+            throw new Error("Please provide new Password")
+         }
+
+         if(!confirmPassword){
+            throw new Error("Please provide confirm Password")
+         }
+
         if(!checkPassword){
             throw new Error("Old password incorrect")
         }
