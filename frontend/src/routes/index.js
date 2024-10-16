@@ -17,6 +17,7 @@ import OrderUser from '../pages/OrderUser'
 import DashBord from '../pages/DashBord'
 import AllCategory from '../pages/AllCategory'
 import ProfilUser from '../pages/ProfilUser'
+import UpdatePassword from '../pages/UpdatePassword'
 
 const router = createBrowserRouter([
     {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
                     {
                         path : "my-order",
                         element : <OrderUser/>
+                    },
+                    {
+                        path : "update-password",
+                        element : <UpdatePassword/>
                     },
                  
                 ]

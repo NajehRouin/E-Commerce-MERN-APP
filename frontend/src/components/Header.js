@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Logo from "./Logo";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart,FaHome,FaLock  } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -94,27 +94,51 @@ const Header = () => {
             )}
 
             {menuDisplay && (
-              <div className="absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded">
-                <nav>
-                  {user?.role === ROLE.ADMIN ? (
+            <div className="absolute bg-white bottom-0 top-11 h-fit p-4 shadow-lg rounded w-auto md:w-auto">
+            <nav>
+              {user?.role === ROLE.ADMIN ? (
+                <>
+                  <div className="flex items-center space-x-2 md:space-x-4">
+                    <FaHome />
                     <Link
                       to={"/admin-panel/home"}
-                      className="whitespace-nowrap hidden md:block hover:bg-slate-100 p-2"
-                      onClick={() => setMenuDisplay((preve) => !preve)}
+                      className="whitespace-nowrap hover:bg-slate-100"
+                      onClick={() => setMenuDisplay((prev) => !prev)}
                     >
                       Admin Panel
                     </Link>
-                  ) : (
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center space-x-2 md:space-x-1">
+                    <FaHome />
                     <Link
                       to={"/user-panel/my-profil"}
-                      className="whitespace-nowrap hidden md:block hover:bg-slate-100 p-2"
-                      onClick={() => setMenuDisplay((preve) => !preve)}
+                      className="whitespace-nowrap hover:bg-slate-100 p-2"
+                      onClick={() => setMenuDisplay((prev) => !prev)}
                     >
                       User Panel
                     </Link>
-                  )}
-                </nav>
-              </div>
+                  </div>
+          
+                  <div className="flex items-center space-x-2 md:space-x-1">
+                    <FaLock  />
+                    <Link
+                      to={"/user-panel/update-password"}
+                      className="whitespace-nowrap hover:bg-slate-100 p-2"
+                      onClick={() => setMenuDisplay((prev) => !prev)}
+                    >
+                      Update Password
+                    </Link>
+                  </div>
+                </>
+              )}
+            </nav>
+          </div>
+          
+           
+            
             )}
           </div>
 

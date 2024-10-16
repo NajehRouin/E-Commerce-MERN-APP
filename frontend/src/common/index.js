@@ -42,6 +42,11 @@ const Api = {
   },
 
 
+  updatePassword: {
+    url: `${apiUrl}/api/updatePassword`,
+    method: "post",
+  },
+
 //api category
 allCategory: {
   url: `${apiUrl}/api/all-category`,
