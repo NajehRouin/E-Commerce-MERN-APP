@@ -30,6 +30,7 @@ const OrdersCtrl = require('../controller/order/OrderCtrl')
 const categoryCtrl = require('../controller/category/CategorysCtrl')
 const updateProfilUser = require('../controller/user/updateProfilUser')
 const resetPassword = require('../controller/user/resetpassword')
+const updatePassword = require('../controller/user/updatePassword')
 
 
 
@@ -42,7 +43,7 @@ router.get('/userByMonth',userByMonth)
 router.post('/updateProfilUser',authToken,updateProfilUser)
 
 router.post('/resetPassword',resetPassword)
-
+router.post('/updatePassword',authToken,updatePassword)
 
 //admin panel 
 router.get("/all-user",authToken,allUsers)
