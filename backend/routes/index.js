@@ -29,7 +29,7 @@ const userByMonth =require('../controller/user/userByMonth')
 const OrdersCtrl = require('../controller/order/OrderCtrl')
 const categoryCtrl = require('../controller/category/CategorysCtrl')
 const updateProfilUser = require('../controller/user/updateProfilUser')
-const resetPassword = require('../controller/user/resetpassword')
+const resetPassword = require('../controller/user/resetPassword')
 const updatePassword = require('../controller/user/updatePassword')
 
 

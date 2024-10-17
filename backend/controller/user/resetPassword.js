@@ -1,6 +1,8 @@
 const userModel = require("../../models/userModel")
 const bcrypt = require('bcryptjs');
 const nodemailer = require("nodemailer");
+
+
 async function resetPassword(req,res) {
     try {
         const {email}=req.body
@@ -99,5 +101,6 @@ const sendToUserMail = async (to, subject, text) => {
       return { success: false, error: error }; // Retourner l'erreur
     }
   };
+
 
 module.exports=resetPassword
