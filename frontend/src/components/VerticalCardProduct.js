@@ -87,8 +87,10 @@ const VerticalCardProduct = ({category, heading}) => {
                                     <p className='capitalize text-slate-500'>{product?.category}</p>
                                     <div className='flex gap-3'>
                                         <p className='text-red-600 font-medium'>{ displayINRCurrency(product?.sellingPrice) }</p>
-                                        <p className='text-slate-500 line-through'>{ displayINRCurrency(product?.price)  }</p>
-                                    </div>
+                                        {
+                          user?.role === ROLE.ADMIN  && (  <p className='text-slate-500 '>{ displayINRCurrency(product?.price)  }</p>
+                                        )}
+                          </div>
                                    
                                
                                
